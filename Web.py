@@ -37,8 +37,8 @@ st.markdown(hide_st_style,True)
 
 
 pwd=os.getcwd()
-Clean_Data_show=pd.read_excel(pwd+r'\\Data_clean.xlsx',usecols="A:G").astype(str)
-Clean_Data=pd.read_excel(pwd+r'\\Data_clean.xlsx').astype(str)
+Clean_Data_show=pd.read_excel('Data_clean.xlsx',usecols="A:G").astype(str)
+Clean_Data=pd.read_excel('Data_clean.xlsx').astype(str)
 
 
 #__Sidebar for changing page___
