@@ -78,22 +78,23 @@ if(Pages=="Data"):
 if(Pages=="Visualisation"):
     st.header("#Let's talk about Data...")
     st.subheader("Global distribution of episode rating")
-    df1=pd.read_excel('Data_clean.xlsx',sheet_name='Workbook',usecols='A:B',engine='openpyxl')
+    df1=pd.read_excel('Data_clean.xlsx',sheet_name='Workbook',usecols='A:N',engine='openpyxl')
+    df1_Show=pd.read_excel('Data_clean.xlsx',sheet_name='Workbook',usecols='A:B',engine='openpyxl')
     data,graph=st.columns(2)
     with data:
-        st.dataframe(df1)
+        st.dataframe(df1_Show)
     with graph:
         fig1=px.bar(df1,x='Rating_Episode',y= 'Number of Rating_Episode',color='Number of Rating_Episode')
         st.plotly_chart(fig1)
 
 
     
-    df2=pd.read_excel('Data_clean.xlsx',sheet_name='Workbook',usecols='D:E',engine='openpyxl')
+    #df2=pd.read_excel('Data_clean.xlsx',sheet_name='Workbook',usecols='D:E',engine='openpyxl')
     st.write("By considering the graph we can say that the alomost 1000 number of episode gate 8.1 rating, which is the higest number,"
         "therefore we can say that the episode get more rating then 8.1 are the popular episode and those which are below 8.1 are not that much populer.")
     pie,space,question=st.columns(3)
     with pie:
-        fig2=px.pie(df2,names='Good_Not',values='Number of Episode',color='Good_Not')
+        fig2=px.pie(df1,names='Good_Not',values='Number of Episode',color='Good_Not')
         st.plotly_chart(fig2)
     with question:
         good_ep_count=sum(Clean_Data.Good_Not == "Good")
@@ -108,9 +109,9 @@ if(Pages=="Visualisation"):
 
     
     
-    df3=pd.read_excel('Data_clean.xlsx',sheet_name='Workbook',usecols='G:H',engine='openpyxl').astype(str)
-    max_gap=df3["Gap_Of_Mean_Rating"].max()
-    name_max_gap=df3[df3["Gap_Of_Mean_Rating"]==max_gap]['Title'].values[0]
+    #df3=pd.read_excel('Data_clean.xlsx',sheet_name='Workbook',usecols='G:K',engine='openpyxl').astype(str)
+    max_gap=df1["Gap_Of_Mean_Rating"].max()
+    name_max_gap=df1[df1["Gap_Of_Mean_Rating"]==max_gap]['Title'].values[0]
     text,anime=st.columns(2)
     with text:
         st.markdown('<h2 style="margin-top:10px">#Episode having higher gap...</h2>',unsafe_allow_html=True)
@@ -121,22 +122,21 @@ if(Pages=="Visualisation"):
 
 
     
-    df4=pd.read_excel('Data_Clean.xlsx',sheet_name="Workbook",usecols="J:K",engine='openpyxl')
-    df5=pd.read_excel('Data_Clean.xlsx',sheet_name='Workbook',usecols="M:N",engine='openpyxl')
-    num_max_rate_mean=df4["Number of Ep_rate_mean"].max()
-    num_max_rate_mid=df5["Number of Ep_rate_median"].max()
-    max_rate_mean=df4[df4["Number of Ep_rate_mean"]==num_max_rate_mean]['Ep_rate_mean'].values[0]
-    max_rate_mid=df5[df5["Number of Ep_rate_median"]==num_max_rate_mid]['Episode_rating_median'].values[0]
+    #df5=pd.read_excel('Data_Clean.xlsx',sheet_name='Workbook',usecols="M:N",engine='openpyxl')
+    num_max_rate_mean=df1["Number of Ep_rate_mean"].max()
+    num_max_rate_mid=df1["Number of Ep_rate_median"].max()
+    max_rate_mean=df1[df1["Number of Ep_rate_mean"]==num_max_rate_mean]['Ep_rate_mean'].values[0]
+    max_rate_mid=df1[df1["Number of Ep_rate_median"]==num_max_rate_mid]['Episode_rating_median'].values[0]
 
     st.markdown('<h2>#TV Series Distribution...</h2>',unsafe_allow_html=True)
     st.markdown('<h4 style="margin-top:10px">Mean Distribution of TV Series</h4>',unsafe_allow_html=True)
-    fig3=px.bar(df4,x="Ep_rate_mean",y="Number of Ep_rate_mean", color="Number of Ep_rate_mean")
+    fig3=px.bar(df1,x="Ep_rate_mean",y="Number of Ep_rate_mean", color="Number of Ep_rate_mean")
     st.plotly_chart(fig3,True)
     st.markdown('<h4 style="margin-top:10px">About distribution</h4>',unsafe_allow_html=True)
     st.write("From the graph of Mean and Median distribution of TV Series, we can assume that the higest mean rating of maximun episode is",max_rate_mean,
     " and higest mid rating of maximum episode is",max_rate_mid,".")
     st.markdown('<h4 style="margin-top:10px">Mid Distribution of TV Series</h4>',unsafe_allow_html=True)
-    fig4=px.scatter(df5, x='Episode_rating_median',y='Number of Ep_rate_median',color='Number of Ep_rate_median',log_x=True,size_max=60)
+    fig4=px.scatter(df1, x='Episode_rating_median',y='Number of Ep_rate_median',color='Number of Ep_rate_median',log_x=True,size_max=60)
     st.plotly_chart(fig4,True)
 
     
