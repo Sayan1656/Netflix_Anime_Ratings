@@ -1,6 +1,5 @@
 import os
 from PIL import Image
-import openpyxl 
 import requests
 import pandas as pd
 import streamlit as st
