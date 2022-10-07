@@ -37,7 +37,7 @@ st.markdown(hide_st_style,True)
 
 
 pwd=os.getcwd()
-Clean_Data_show=pd.read_excel('Data_clean.xlsx',usecols="A:G").astype(str)
+Clean_Data_show=pd.read_excel('Data_clean.xlsx',usecols="A:G",engine="openpyxl").astype(str)
 Clean_Data=pd.read_excel('Data_clean.xlsx').astype(str)
 
 
