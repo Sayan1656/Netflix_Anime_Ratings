@@ -108,7 +108,7 @@ if(Pages=="Visualisation"):
 
     
     
-    df3=pd.read_excel('\\Data_clean.xlsx',sheet_name='Workbook',usecols='G:H',engine='openpyxl').astype(str)
+    df3=pd.read_excel('Data_clean.xlsx',sheet_name='Workbook',usecols='G:H',engine='openpyxl').astype(str)
     max_gap=df3["Gap_Of_Mean_Rating"].max()
     name_max_gap=df3[df3["Gap_Of_Mean_Rating"]==max_gap]['Title'].values[0]
     text,anime=st.columns(2)
