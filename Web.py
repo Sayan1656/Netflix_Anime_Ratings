@@ -1,4 +1,3 @@
-import numpy as np
 import os
 from PIL import Image
 import requests
@@ -58,8 +57,8 @@ if(Pages=="Data"):
     with st.container():
         text,Animetion=st.columns(2)
         with text:
-            st.markdown('<h2 style="padding-right: 50px">About Dataset</h2><p style="padding-right: 50px">Now days anime are very much populer, not only among the childern but also a lot of grown ups, It help them to understand a lot of thing about our life, it helps to forget pain an overcome sadness, to choose happyness, sometime help to overcome the pressure.</p>'
-                    '<p style="padding-right: 50px">There are a lot of anime platfrom are present now day such as CrunchyRoll, GogoAnime, KissAnime etc. Such an Platfom is Netflix, Where you can not only see the aanime show but also some webseries and lot more.</p>'
+            st.markdown('<h2 style="padding-right: 50px">About Dataset</h2><p style="padding-right: 50px">Now days webseries are very much populer, not only among the childern but also a lot of grown ups, It help them to understand a lot of thing about our life, it helps to forget pain an overcome sadness, to choose happyness, sometime help to overcome the pressure.</p>'
+                    '<p style="padding-right: 50px">There are a lot of anime platfrom are present now day such as CrunchyRoll, GogoAnime, KissAnime etc and also different platfroms for webseries like Hoichoi, Zee5, MxPlayer etc. But Net flis is such a platfrom, where you can not only see the populer anime show but also some many intresting webseries and lot more.</p>'
                     '<p style="padding-right: 50px">This is a personal project to collect all ratings from TV Series Episodes in the top <a href="https://www.imdb.com/chart/toptv/" style="text-decoration:none">250 TV Series list</a> from IMDb.</p>'
                     '<p style="padding-right: 50px">An monthly updated version of this data is available <a href="https://www.kaggle.com/datasets/wittmannf/episode-ratings-from-imdb-top-250-tv-series" style="text-decoration:none">here</a>.</p>'
                     '<p style="padding-right: 50px">It has been scheduled to update automatically using this <a href="https://www.kaggle.com/code/wittmannf/collect-episode-rating-from-imdb-top-tv-250-series" style="text-decoration:none">kaggle kerne</a>.</p>'
@@ -104,10 +103,10 @@ if(Pages=="Visualisation"):
         ep_count=Clean_Data["Title"].count()
         
         st.header("Summary")
-        st.write("There are ",ep_count,"number of episodes (in anime) present in Netflix. Among those episodes, their are ",good_ep_count,"numbers of popular episodes"
+        st.write("There are ",ep_count,"number of episodes (Total) present in Netflix. Among those episodes, their are ",good_ep_count,"numbers of popular episodes"
         " and", not_good_ep_count,"number of episodes are not that much popular (if I consider 8.1 is a minimum rating for a good episode).")
-        st.write("Although each and every anime has their own fan base, different kind of people like different type of animes, so it is not possible to judge concept"
-        " of an anime based on its rating. So this is my suggestion to wacth anime base on your teast not based on its rating. :blush:")
+        st.write("Although each and every webseries has their own fan base, different kind of people like different type of webseries, so it is not possible to judge concept"
+        " of an webseries based on its rating. So this is my suggestion to wacth a webseries base on your teast not based on its rating. :blush:")
 
     
     
@@ -117,7 +116,7 @@ if(Pages=="Visualisation"):
     text,anime=st.columns(2)
     with text:
         st.markdown('<h2 style="margin-top:10px">#Episode having higher gap...</h2>',unsafe_allow_html=True)
-        st.write("There are sevarel anime having a huge gap between their Mean Episode Rating and their TV Series Rating, But the series named,",name_max_gap,"having maiximum gap between"
+        st.write("There are sevarel webseries having a huge gap between their Mean Episode Rating and their TV Series Rating, But the series named,",name_max_gap,"having maiximum gap between"
         " it's Mean Episode Rating and TV Series Rating, which is", max_gap,".")
     with anime:
         st_lottie(AlartAnimetion,height=200)
@@ -151,11 +150,11 @@ if(Pages=="Visualisation"):
     text1,anime,text2=st.columns(3)
     with text1:
         st.markdown('<h4 style="margin-top:10px">Popular First Episode...</h4>',unsafe_allow_html=True)
-        st.write("Among all the anime the most intresting First episode is: ",name_max_rate_first,", where Valery Legasov speaks into a tape recorder about the Chernobyl nuclear disaster. He talks about Anatoly Dyatlov, who he feels deserves death for what he had done."
+        st.write("Among all the webseries the most intresting First episode is: ",name_max_rate_first,", where Valery Legasov speaks into a tape recorder about the Chernobyl nuclear disaster. He talks about Anatoly Dyatlov, who he feels deserves death for what he had done."
         " Finishing the tape, Legasov places it with others he made and hides it outside. He carefully avoids being seen by a car outside his apartment that is always there, watching him. Back inside, he checks his watch as he finishes a cigarette and lays out extra food for his cat. At 1:23:45, he hangs himself...")
     with text2:
         st.markdown('<h4 style="margin-top:10px">Popular Last Episode...</h4>',unsafe_allow_html=True)
-        st.write("Among all the anime the most intresting Last episode is: ",name_max_rate_last,", where Aang fought with Ozai during Sozin’s comet. Ozai had the upper hand at the start, but when Aang entered the Avatar state he got the upper hand. And in the end, he took Ozai’s bending away.")
+        st.write("Among all the webseries the most intresting Last episode is: ",name_max_rate_last,", which is an anime, where Aang, the Avator, fought with fire Lord Ozai during Sozin’s comet. Ozai had the upper hand at the start, but when Aang entered the Avatar state he got the upper hand. And in the end, he took Ozai’s bending away.")
         st.write("Suki, Toph and Sokka finished their mission by destroying all the airships in a ‘airship slide’ and arrived to congrats Aang.")
         st.write("On the other side, Zuko is in a Agni Kai with Azula, who is ‘slipping’. And got the upper hand until Katara appeared around the corner. Azula knew that she couldn’t win so she directed lightning at Zuko, but changed to directed at Katara. Zuko jumped in front of her and the fight ended with Katara bounding Azula’s hands with metal chains.")
     with anime:
@@ -164,13 +163,13 @@ if(Pages=="Visualisation"):
     
 
     st.markdown('<h2 style="margin-top:10px">#Conclusion</h2>',unsafe_allow_html=True)
-    st.write("As an anime addictor, I can say that anime is not a thing to judge by it's rating. The thing which help us to overcome our stress in our daily busy life schudule"
+    st.write("As an web-series addictor, I can say that webseries is not a thing to judge by it's rating. The thing which help us to overcome our stress in our daily busy life schudule"
     ", that can't be judge by rating or can't be compared with any thing else.")
-    st.write("Different people has their own different ideaology, and an anime was made by keeping this ideology in mind,"
-    " so thats why, different anime has it's own different teast. Some of of them may be romantic on the other hand there are some anime based on action,"
+    st.write("Different people has their own different ideaology, and an webseries was made by keeping this ideology in mind,"
+    " so thats why, different webseries has it's own different teast. Some of of them may be romantic on the other hand there are some anime based on action,"
     ' some of them may be comedic but some of them are trageic, there are classical anime like "Mr.Bean", "Chota Bheem" or "Tom & Jerry", as well as Sci-fi anime'
     ' like "Sword Art Online" and "Mobile Suit Gundum".')
-    st.write("So choose an anime series based on your teast not by some ones rating and other's influence.")
+    st.write("So choose an webseries series based on your teast not by some ones rating and other's influence.")
     
 
 #___Page Contact___
