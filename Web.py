@@ -38,7 +38,7 @@ st.markdown(hide_st_style,True)
 
 pwd=os.getcwd()
 Clean_Data_show=pd.read_excel('Data_clean.xlsx',usecols="A:G",engine='openpyxl').astype(str)
-Clean_Data=pd.read_excel('Data_clean.xlsx').astype(str)
+Clean_Data=pd.read_excel('Data_clean.xlsx',engine='openpyxl').astype(str)
 
 
 #__Sidebar for changing page___
@@ -80,7 +80,7 @@ if(Pages=="Data"):
 if(Pages=="Visualisation"):
     st.header("#Let's talk about Data...")
     st.subheader("Global distribution of episode rating")
-    df1=pd.read_excel(pwd+'\\Data_clean.xlsx',sheet_name='Workbook',usecols='A:B')
+    df1=pd.read_excel(pwd+'\\Data_clean.xlsx',sheet_name='Workbook',usecols='A:B',engine='openpyxl')
     data,graph=st.columns(2)
     with data:
         st.dataframe(df1)
@@ -90,7 +90,7 @@ if(Pages=="Visualisation"):
 
 
     
-    df2=pd.read_excel(pwd+'\\Data_clean.xlsx',sheet_name='Workbook',usecols='D:E')
+    df2=pd.read_excel(pwd+'\\Data_clean.xlsx',sheet_name='Workbook',usecols='D:E',engine='openpyxl')
     st.write("By considering the graph we can say that the alomost 1000 number of episode gate 8.1 rating, which is the higest number,"
         "therefore we can say that the episode get more rating then 8.1 are the popular episode and those which are below 8.1 are not that much populer.")
     pie,space,question=st.columns(3)
@@ -110,7 +110,7 @@ if(Pages=="Visualisation"):
 
     
     
-    df3=pd.read_excel(pwd+'\\Data_clean.xlsx',sheet_name='Workbook',usecols='G:H').astype(str)
+    df3=pd.read_excel(pwd+'\\Data_clean.xlsx',sheet_name='Workbook',usecols='G:H',engine='openpyxl').astype(str)
     max_gap=df3["Gap_Of_Mean_Rating"].max()
     name_max_gap=df3[df3["Gap_Of_Mean_Rating"]==max_gap]['Title'].values[0]
     text,anime=st.columns(2)
@@ -123,8 +123,8 @@ if(Pages=="Visualisation"):
 
 
     
-    df4=pd.read_excel(pwd+'\\Data_Clean.xlsx',sheet_name="Workbook",usecols="J:K")
-    df5=pd.read_excel(pwd+'\\Data_Clean.xlsx',sheet_name='Workbook',usecols="M:N")
+    df4=pd.read_excel(pwd+'\\Data_Clean.xlsx',sheet_name="Workbook",usecols="J:K",engine='openpyxl')
+    df5=pd.read_excel(pwd+'\\Data_Clean.xlsx',sheet_name='Workbook',usecols="M:N",engine='openpyxl')
     num_max_rate_mean=df4["Number of Ep_rate_mean"].max()
     num_max_rate_mid=df5["Number of Ep_rate_median"].max()
     max_rate_mean=df4[df4["Number of Ep_rate_mean"]==num_max_rate_mean]['Ep_rate_mean'].values[0]
