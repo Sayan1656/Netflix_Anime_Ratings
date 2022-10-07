@@ -1,5 +1,6 @@
 import os
 from PIL import Image
+import openpyxl 
 import requests
 import pandas as pd
 import streamlit as st
@@ -37,7 +38,7 @@ st.markdown(hide_st_style,True)
 
 
 pwd=os.getcwd()
-Clean_Data_show=pd.read_excel('Data_clean.xlsx',usecols="A:G",engine="openpyxl").astype(str)
+Clean_Data_show=pd.read_excel('Data_clean.xlsx',usecols="A:G",engine=openpyxl).astype(str)
 Clean_Data=pd.read_excel('Data_clean.xlsx').astype(str)
 
 
