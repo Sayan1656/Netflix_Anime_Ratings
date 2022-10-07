@@ -26,7 +26,7 @@ PopularAnimetion2=anime("https://assets1.lottiefiles.com/private_files/lf30_sbjx
 
 
 #___Configuration___
-page_logo=Image.open("picture\\TanjiroChibi.jpg")
+page_logo=Image.open(r"TanjiroChibi.jpg")
 st.set_page_config(page_title="Netflix anime ratings",page_icon=page_logo,layout="wide")
 hide_st_style='''
 <style>
